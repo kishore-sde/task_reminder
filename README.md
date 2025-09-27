@@ -7,6 +7,42 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Laravel Project Showcase
+
+## Features
+
+1. **Authentication**
+   - Implemented using **Laravel Breeze**
+   - Login, registration, and dashboard redirect after login
+
+2. **Redis Cache**
+   - Cached user list and other heavy queries
+   - Example: `Cache::remember('users', 600, ...)`
+
+3. **Jobs & Queues**
+   - Welcome email sent asynchronously using **jobs & queues**
+   - Redis used as the queue driver for speed
+
+4. **Email Notifications**
+   - Welcome email sent after user registration
+   - Configured with `.env` SMTP settings
+
+5. **Queue Monitoring with Laravel Horizon**
+   - Horizon provides a dashboard to monitor jobs, failed jobs, retries, and processing time
+   - Run Horizon: `php artisan horizon`
+   - Access dashboard: `http://localhost:8000/horizon` (or deployed URL)
+
+## How to Run
+
+1. Clone the repo  
+2. `composer install`  
+3. `cp .env.example .env` and set DB, Redis & mail credentials  
+4. `php artisan migrate`  
+5. `php artisan serve`  
+6. Start queue worker / Horizon: `php artisan horizon`  
+7. Register a user to see welcome email and jobs processed
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
