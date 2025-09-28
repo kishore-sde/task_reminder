@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
         // Dispatch queue
         //SendWelcomeEmail::dispatchSync($user);
 
-         SendWelcomeEmail::dispatch($user);
+        // SendWelcomeEmail::dispatch($user);
 
         event(new Registered($user));
 
